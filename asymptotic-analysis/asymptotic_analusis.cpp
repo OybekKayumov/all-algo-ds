@@ -40,6 +40,14 @@ void f4_cycle_n(int n) // O(n)
     cout << i;
 }
 
+void f5_cycle_nm1(int n, int m) // O(max(n, m) = O(n + m)
+{
+  for (int i = 0; i < n; ++i)
+    cout << i;
+  for (int i = 0; i < m; ++i)
+    cout << i;
+}
+
 int min()
 {
 }
