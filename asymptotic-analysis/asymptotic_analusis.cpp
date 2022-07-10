@@ -48,6 +48,39 @@ void f5_cycle_nm1(int n, int m) // O(max(n, m) = O(n + m)
     cout << i;
 }
 
+void f6_cycle_nm2(int n, int m) // O((n* m)
+{
+  for (int i = 0; i < n; ++i)
+    for (int j = 0; j < m; ++j)
+      cout << i + j;
+}
+
+void f7_cycle_n2(int n) // O((n*n) = O(n^2)
+{
+  for (int i = 0; i < n; ++i)
+    for (int j = 0; j < n; ++j)
+      cout << i + j;
+}
+
+void f8_cycle_n3(int n) // O((n*n*n) = O(n^3)
+{
+  for (int i = 0; i < n; ++i)
+    for (int j = 0; j < n; ++j)
+      for (int k = 0; k < n; ++k)
+        cout << i + j + k;
+}
+
+// 2nd cycle starts with j = i
+void f9_cycle_ij(int n) // O((n*n) = O(n^2)
+{
+  for (int i = 0; i < n; ++i)
+    for (int j = i; j < n; ++j)
+      cout << i + j;
+  // 1step, i=0 -> n, 2step, i=1 -> n + (n - 1) ... +1 ==> n*(n+1)/2
+  // n*(n+1)/2 = 1/2*(n*n + n)
+  // berem ~ max slojnost O(n^2)
+}
+
 int min()
 {
 }
