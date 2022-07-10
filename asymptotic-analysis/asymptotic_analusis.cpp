@@ -97,7 +97,7 @@ void f10_cycle_n123(int n) // take max strength O(n^3)
 }
 
 // but
-void f10_cycle_abc123(int a, int b, int c) // O(a + b^2 + c^3)
+void f11_cycle_abc123(int a, int b, int c) // O(a + b^2 + c^3)
 {
   for (int i = 0; i < a; ++i) // maybe a = 1 000 000 000
     cout << i;                // O(a)
@@ -111,6 +111,59 @@ void f10_cycle_abc123(int a, int b, int c) // O(a + b^2 + c^3)
       for (int k = 0; k < c; ++k)
         cout << i + j + k; // O(c^3)
 }
+
+int f12_cycle_log1(int a) // O(log(a))
+{
+  int sum = 0;
+
+  while (a != 0) // log10(a)
+  {
+    sum += a % 10;
+    a /= 10;
+  }
+  return sum;
+}
+
+int f13_cycle_log2(int n) // O(n*log(n))
+{
+  int sum = 0;
+  for (int i = 0; i < n; ++i)
+  {
+    int a = i;
+    while (a != 0) // log10(a)
+    {
+      sum += a % 10;
+      a /= 10;
+    }
+  }
+  return sum;
+}
+
+int f14_cycle_sqrt(int n) // O(sqrt(n))
+{
+  // for (int i = 0; i < sqrt(n); ++i)
+  // or
+  for (int i = 0; i * i < n; ++i)
+  {
+    cout << i;
+  }
+}
+
+void f15_cycle_n_plus_2_3(int n) // O(n)
+{
+  for (int i = 0; i < n; i += 2) // n/2 = 1/2 * n
+  // for (int i = 0; i < n; i += 3) // n/3 = 1/3 * n
+  {
+    cout << i;
+  }
+}
+
+// slojnie O(2^n), O(3^n), O(n!)
+// nam nujny n kak mojno menshe
+// O(2^20) ~ 1 000 000 (mln) deystviy
+// O(3^20) ~ 3 500 000 000 (mlrd) deystviy
+
+// modern pc ~ 10^9 deystviy per second
 
 int min()
 {
