@@ -81,6 +81,37 @@ void f9_cycle_ij(int n) // O((n*n) = O(n^2)
   // berem ~ max slojnost O(n^2)
 }
 
+void f10_cycle_n123(int n) // take max strength O(n^3)
+{
+  for (int i = 0; i < n; ++i)
+    cout << i; // O(n)
+
+  for (int i = 0; i < n; ++i)
+    for (int j = 0; j < n; ++j)
+      cout << i + j; // O(n^2)
+
+  for (int i = 0; i < n; ++i)
+    for (int j = 0; j < n; ++j)
+      for (int k = 0; k < n; ++k)
+        cout << i + j + k; // O(n^3)
+}
+
+// but
+void f10_cycle_abc123(int a, int b, int c) // O(a + b^2 + c^3)
+{
+  for (int i = 0; i < a; ++i) // maybe a = 1 000 000 000
+    cout << i;                // O(a)
+
+  for (int i = 0; i < b; ++i) // b == 100
+    for (int j = 0; j < b; ++j)
+      cout << i + j; // O(b^2)
+
+  for (int i = 0; i < c; ++i) // c = 10
+    for (int j = 0; j < c; ++j)
+      for (int k = 0; k < c; ++k)
+        cout << i + j + k; // O(c^3)
+}
+
 int min()
 {
 }
