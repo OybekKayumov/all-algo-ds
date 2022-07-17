@@ -13,6 +13,20 @@ ListNode *node3 = new ListNode(3);
 // node1->next = node2;
 // node2->next = node3;
 
+void insert_after(ListNode *node, int data)
+{
+  ListNode *new_node = new ListNode(data);
+  new_node->next = node->next;
+  node->next = new_node;
+}
+
+void delete_after(ListNode *node)
+{
+  ListNode *next_node = node->next->next;
+  delete node->next;
+  node->next = next_node;
+}
+
 bool has_cycle(ListNode *node)
 {
   ListNode *first = node;
