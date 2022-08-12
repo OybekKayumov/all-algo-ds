@@ -5,9 +5,10 @@
 using namespace std;
 
 // merge function
-vector<int> merge(vector<int> &left, vector<int> &right) // prinimaet 2 vectora: left i right
+// prinimaet 2 vectora: left i right
+vector<int> merge(vector<int> &left, vector<int> &right)
 {
-  // new array: merged
+  // create a new array: merged
   vector<int> merged;
   int left_index = 0, right_index = 0;
 
