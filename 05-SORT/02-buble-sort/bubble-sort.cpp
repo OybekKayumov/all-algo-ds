@@ -9,11 +9,11 @@ void bubble_sort(vector<int> &arr)
   for (int j = 0; j < arr.size(); ++j)
   {
 
-    for (int i = 1; i < arr.size(); ++i)
+    for (int i = 1; i < arr.size() - j; ++i)
     {
       if (arr[i] < arr[i - 1])
       {
-        swap(arr[i], arr[i - 1]);
+        swap(arr[i], arr[i - 1]); // menyaem mestami
       }
     }
   }
