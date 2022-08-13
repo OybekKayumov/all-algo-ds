@@ -8,13 +8,18 @@ void bubble_sort(vector<int> &arr)
 {
   for (int j = 0; j < arr.size(); ++j)
   {
-
+    bool is_sorted = true;
     for (int i = 1; i < arr.size() - j; ++i)
     {
       if (arr[i] < arr[i - 1])
       {
+        is_sorted = false;
         swap(arr[i], arr[i - 1]); // menyaem mestami
       }
+    }
+    if (is_sorted == true)
+    {
+      return;
     }
   }
 }
